@@ -9,7 +9,7 @@ namespace HashAndBinary
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose option\n1.find frequency of word\n2.Create Binary Tree\n3.exit");
+                Console.WriteLine("Choose option\n1.find frequency of word\n2.Create Binary Tree\n3.Create Binary Tree in 2D\n4.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -37,10 +37,26 @@ namespace HashAndBinary
                         binary.In_order(binary.root);
                         break;
                     case 3:
+                        Node root = new Node(56);
+                        root.left = new Node(30);
+                        root.right = new Node(70);
+                        root.left.left = new Node(22);
+                        root.left.right = new Node(40);
+                        root.right.left = new Node(60);
+                        root.right.right = new Node(95);
+                        root.left.left.left = new Node(11);
+                        root.right.left.right = new Node(65);
+                        root.left.left.left.left = new Node(3);
+                        root.left.left.left.right = new Node(16);
+                        root.right.left.right.left = new Node(63);
+                        root.right.left.right.right = new Node(67);
+                        BinarySearchTree.Print2Dtree(root, 0);
+                        break;
+                    case 4:
                         flag = false;
                         break;
                     default:
-                        Console.WriteLine("your option should be between 1 to 3");
+                        Console.WriteLine("your option should be between 1 to 4");
                         break;
                 }
             }

@@ -16,7 +16,7 @@ namespace HashAndBinary
         }
         public void Insert(int value)
         {
-            Node newnode = new Node();
+            Node newnode = new Node(value);
             newnode.data = value;
             if (root == null)
             {
@@ -76,6 +76,19 @@ namespace HashAndBinary
                 Console.WriteLine(parent.data + " ");
                 In_order(parent.right);
             }
+        }
+        public static void Print2Dtree(Node root,int space)
+        {
+            if (root == null)
+                return;
+            space += COUNT;
+            Print2Dtree(root.right, space);
+            for (int i = COUNT; i < space; i++)
+            {
+                Console.Write(" ");
+            }
+                Console.WriteLine(root.data + "\n"); 
+            Print2Dtree(root.left, space);
         }
     }
 }
