@@ -90,5 +90,27 @@ namespace HashAndBinary
                 Console.WriteLine(root.data + "\n"); 
             Print2Dtree(root.left, space);
         }
+        public static bool search(Node root,int value)
+        {
+            if (root == null)
+            {
+                return false;
+            }
+            if (root.data == value)
+            {
+                return true;
+            }
+            bool result1 = search(root.left, value);
+            if (result1)
+            {
+                return true;
+            }
+            else
+            {
+                bool result2 = search(root.right, value);
+                return result2;
+            }
+        }
+
     }
 }

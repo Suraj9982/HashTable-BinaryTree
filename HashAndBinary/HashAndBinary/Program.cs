@@ -9,7 +9,7 @@ namespace HashAndBinary
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose option\n1.find frequency of word\n2.Create Binary Tree\n3.Create Binary Tree in 2D\n4.Exit");
+                Console.WriteLine("Choose option\n1.find frequency of word\n2.Create Binary Tree\n3.Create Binary Tree in 2D\n4.Search in BinaryTree\n5.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -53,10 +53,34 @@ namespace HashAndBinary
                         BinarySearchTree.Print2Dtree(root, 0);
                         break;
                     case 4:
+                        Node root1 = new Node(56);
+                        root1.left = new Node(30);
+                        root1.right = new Node(70);
+                        root1.left.left = new Node(22);
+                        root1.left.right = new Node(40);
+                        root1.right.left = new Node(60);
+                        root1.right.right = new Node(95);
+                        root1.left.left.left = new Node(11);
+                        root1.right.left.right = new Node(65);
+                        root1.left.left.left.left = new Node(3);
+                        root1.left.left.left.right = new Node(16);
+                        root1.right.left.right.left = new Node(63);
+                        root1.right.left.right.right = new Node(67);
+                        BinarySearchTree.Print2Dtree(root1, 0);
+                        Console.WriteLine("enter number you want to search for");
+                        int num = Convert.ToInt32(Console.ReadLine());
+                        if (BinarySearchTree.search(root1, num))
+                        {
+                            Console.WriteLine("item is found");
+                        }
+                        else
+                            Console.WriteLine("item is not found");
+                        break;
+                    case 5:
                         flag = false;
                         break;
                     default:
-                        Console.WriteLine("your option should be between 1 to 4");
+                        Console.WriteLine("your option should be between 1 to 5");
                         break;
                 }
             }
